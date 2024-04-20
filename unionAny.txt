@@ -1,0 +1,92 @@
+Union
+create table mech(roll int,name varchar(255),m1 int, phy int,chem int,c int);
+Mech
+roll  name    m1  phy  chem  c
+11    Alex    34  65    98   45
+22    Felix   85  54    21   65
+
+eee
+roll  name    m1   phy  chem  c
+11    Aliana  98   65   45   36
+22    john    33  98    75   61
+
+civ
+roll name   m1    phy  chem   c
+11   keny   76    87    99    21
+22   Jane   32    56    45    43
+
+select roll,c from mech union select roll,c from eee union select roll,c from civ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select roll,c from mech union select roll,c from eee union select roll , c from civ;
+
+select roll,chem from mech where chem>90 union
+
+
+select roll,name,chem from mech where chem>90 union
+select * from mech union select * from eee union select * from civ;
+
+select name,m1 from mech where m1<35 union select name ,m1 from eee where m1<35 union
+select name ,m1 from civ where m1<35;
+
+
+
+ANY
+
+studentpersonal              
+roll name  phone city
+11  stacy  1234   hyderabad
+22   Mike  5678  Bengaluru     
+33   Bill  9876  hyderabad
+44   Henry 4321  Kolkata
+55   stacy 456   Pune
+66   Grace 6521  kolkata
+
+studentAcad                             
+roll name  score                            
+11   stacy  1                           
+22   Mike   223   7                      
+33   Bill   1                           
+44   Henry  2                             
+55   sam    3                              
+77   philip 21    
+
+
+           
+      
+select phone from studentpersonal where roll=any(select roll from studentacad where score=1);//lhs  lo roll tho end ayte rhs lo roll tho start avvali ade cndtn
+select distinct(city) from studentpersonal where roll=any(select roll from studentacad where score=1);
+                                                    
+select name,phone from studentpersonal where roll=any(select roll from studentacad where score=any(select max(score) from studentacad));
+
+*names of the students got max score
+                                             
+select name from studentacad where score=any(select max(score) from studentacad);
+
+*students city whose score is minimum
+
+select city from studentpersonal where roll=any(select roll from studentacad where score=any(select min(score) from studentacad);
+
+
+
+
+
+
+
+
+
+
+

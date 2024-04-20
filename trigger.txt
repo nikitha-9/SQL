@@ -1,0 +1,141 @@
+Triggers
+
+Triggers are the SQL statements that are automatically executed when there is any event in the database.In response to certain events (INSERT, UPDATE or DELETE) in a particular table.
+Tiggers are commonly used in SQL Server to automate data updates. 
+
+Syntax:
+create trigger Trigger_name
+(before | after)
+[insert | update | delete] 
+on [table_name]  
+[for each row]  
+[trigger_body]
+
+CREATE TRIGGER: These two keywords specify that a triggered block is going to be declared.
+TRIGGER_NAME: It creates or replaces an existing trigger with the Trigger_name. The trigger name should be unique.
+BEFORE | AFTER: It specifies when the trigger will be initiated i.e. before the ongoing event or after the ongoing event.
+INSERT | UPDATE | DELETE : These are the DML operations and we can use either of them in a given trigger.
+ON[TABLE_NAME]: It specifies the name of the table on which the trigger is going to be applied.
+FOR EACH ROW: Row-level trigger gets executed when any row value of any column changes.
+TRIGGER BODY: It consists of queries that need to be executed when the trigger is called.
+
+
+create trigger set_marks before insert on student_det for each row
+set new.Marks=new.Marks+100;
+
+The new keyword refers to the row that is getting affected.
+                    
+insert into student_details values(106,"felix","Chris",22);
+
+SELECT * FROM Student;
+
+create table student_det(rollno int, fname varchar(255),lname varchar(255),Marks int);
+mysql> create table student_det(rollno int, fname varchar(255),lname varchar(255),Marks int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create trigger set_marks before insert on student_det for each row set new.marks=new.marks+100;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into student_details values(106,"felix","Chris",22);
+ERROR 1146 (42S02): Table 'academy.student_details' doesn't exist
+mysql> insert into student_det values(106,"felix","Chris",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student_det;
++--------+-------+-------+-------+
+| rollno | fname | lname | Marks |
++--------+-------+-------+-------+
+|    106 | felix | Chris |   122 |
++--------+-------+-------+-------+
+1 row in set (0.00 sec)
+
+
+
+
+
+********************************************************************
+create table student_per(age int,name varchar(255));
+
+age  name
+22   anil
+23   ajay
+24   ajith
+
+select * from student_per;
+
+
+create table student_arch(age int,name varchar(255));
+
+
+      delimiter //
+      create trigger before_stu_del before delete on student_per for each row
+       begin
+      insert into student_arch(age,name)values(old.age,old.name);
+      end //
+
+
+ delimiter ;
+delete from student_per where age=22;
+
+select * from student_arch;
+
+******************************************************************************
+
+ create table salary(empid int,empsal int);
+
+
+ insert into salary values(11,26777);
+
+
+insert into salary values(22,87766);
+
+
+insert into salary values(33,67777);
+
+
+select * from salary;
++-------+--------+
+| empid | empsal |
++-------+--------+
+|    11 |  26777 |
+|    22 |  87766 |
+|    33 |  67777 |
++-------+--------+
+
+
+create table salarybudget(total int);
+
+
+
+
+
+
+
+insert into salarybudget(total)select sum(empsal) from salary;
+
+
+
+
+mysql> select * from salarybudget;
+
++--------+
+| total  |
++--------+
+| 182320 |
++--------+
+
+
+
+create trigger after_sal_del after delete on salary for each row 
+update salarybudget set total=total-old.empsal;
+
+delete from salary where empid=11;
+
+select * from salarybudget;
+
+
+
+
+
+
+
