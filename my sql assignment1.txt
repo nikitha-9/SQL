@@ -1,0 +1,224 @@
+mysql> create table empl(empno int,ename varchar(255),job varchar(255),mgr int,hireddate date,salary int,comm int,deptno int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc empl;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| empno     | int          | YES  |     | NULL    |       |
+| ename     | varchar(255) | YES  |     | NULL    |       |
+| job       | varchar(255) | YES  |     | NULL    |       |
+| mgr       | int          | YES  |     | NULL    |       |
+| hireddate | date         | YES  |     | NULL    |       |
+| salary    | int          | YES  |     | NULL    |       |
+| comm      | int          | YES  |     | NULL    |       |
+| deptno    | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+
+mysql> insert into empl values(8369,'smith','clerk',8902,18-02-1990,800,null,20);
+ERROR 1292 (22007): Incorrect date value: '-1974' for column 'hireddate' at row 1
+mysql> insert into empl values(8369,'smith','clerk',8902,'1990-12-18',800,null,20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from empl;
++-------+-------+-------+------+------------+--------+------+--------+
+| empno | ename | job   | mgr  | hireddate  | salary | comm | deptno |
++-------+-------+-------+------+------------+--------+------+--------+
+|  8369 | smith | clerk | 8902 | 1990-12-18 |    800 | NULL |     20 |
++-------+-------+-------+------+------------+--------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into empl values(8499,'anya','salesman',8696,'1991-02-20',1600,300,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8521,'seth','salesman',8698,'1991-02-22',1250,500,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from empl;
++-------+-------+----------+------+------------+--------+------+--------+
+| empno | ename | job      | mgr  | hireddate  | salary | comm | deptno |
++-------+-------+----------+------+------------+--------+------+--------+
+|  8369 | smith | clerk    | 8902 | 1990-12-18 |    800 | NULL |     20 |
+|  8499 | anya  | salesman | 8696 | 1991-02-20 |   1600 |  300 |     30 |
+|  8521 | seth  | salesman | 8698 | 1991-02-22 |   1250 |  500 |     30 |
++-------+-------+----------+------+------------+--------+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into empl values(8566,'mahadevan','manager',8839,'1991-04-02',2985,null,20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8654,'momin','salesman',8698,'1991-09-28',1250,1400,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8698,'bina','manager',8839,'1991-05-01',2850,null,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8882,'shivash','manager',8839,'1991-06-09',2450,null,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8888,'scott','analyst',8566,'1992-12-09',3000,null,20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8839,'amir','president',null,'1991-11-18',5000,null,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into empl values(8844,'kuldeep','salesman',8698,'1991-09-08',1500,0,30);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from empl;
++-------+-----------+-----------+------+------------+--------+------+--------+
+| empno | ename     | job       | mgr  | hireddate  | salary | comm | deptno |
++-------+-----------+-----------+------+------------+--------+------+--------+
+|  8369 | smith     | clerk     | 8902 | 1990-12-18 |    800 | NULL |     20 |
+|  8499 | anya      | salesman  | 8696 | 1991-02-20 |   1600 |  300 |     30 |
+|  8521 | seth      | salesman  | 8698 | 1991-02-22 |   1250 |  500 |     30 |
+|  8566 | mahadevan | manager   | 8839 | 1991-04-02 |   2985 | NULL |     20 |
+|  8654 | momin     | salesman  | 8698 | 1991-09-28 |   1250 | 1400 |     30 |
+|  8698 | bina      | manager   | 8839 | 1991-05-01 |   2850 | NULL |     30 |
+|  8882 | shivash   | manager   | 8839 | 1991-06-09 |   2450 | NULL |     10 |
+|  8888 | scott     | analyst   | 8566 | 1992-12-09 |   3000 | NULL |     20 |
+|  8839 | amir      | president | NULL | 1991-11-18 |   5000 | NULL |     10 |
+|  8844 | kuldeep   | salesman  | 8698 | 1991-09-08 |   1500 |    0 |     30 |
++-------+-----------+-----------+------+------------+--------+------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select ename and salary from empl where salary>2200;
++------------------+
+| ename and salary |
++------------------+
+|                0 |
+|                0 |
+|                0 |
+|                0 |
+|                0 |
++------------------+
+5 rows in set, 3 warnings (0.00 sec)
+
+mysql> select ename,salary from empl where salary>2200;
++-----------+--------+
+| ename     | salary |
++-----------+--------+
+| mahadevan |   2985 |
+| bina      |   2850 |
+| shivash   |   2450 |
+| scott     |   3000 |
+| amir      |   5000 |
++-----------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select ename from empl where comm = not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not null' at line 1
+mysql> select ename from empl where comm>0;
++-------+
+| ename |
++-------+
+| anya  |
+| seth  |
+| momin |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select ename,salary from empl where salary between in 2500 to 4000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in 2500 to 4000' at line 1
+mysql> select ename,salary from empl where salary between in 2500 and 4000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in 2500 and 4000' at line 1
+mysql> select ename,salary from empl where salary between 2500 and 4000;
++-----------+--------+
+| ename     | salary |
++-----------+--------+
+| mahadevan |   2985 |
+| bina      |   2850 |
+| scott     |   3000 |
++-----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select ename,salary from empl where salary between not 2500 and 4000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not 2500 and 4000' at line 1
+mysql> select ename,salary from empl where salary not between 2500 and 4000;
++---------+--------+
+| ename   | salary |
++---------+--------+
+| smith   |    800 |
+| anya    |   1600 |
+| seth    |   1250 |
+| momin   |   1250 |
+| shivash |   2450 |
+| amir    |   5000 |
+| kuldeep |   1500 |
++---------+--------+
+7 rows in set (0.00 sec)
+
+mysql> select ename,job,salary where job='manager';
+ERROR 1054 (42S22): Unknown column 'ename' in 'field list'
+mysql> select ename,job,salary from empl where job='manager';
++-----------+---------+--------+
+| ename     | job     | salary |
++-----------+---------+--------+
+| mahadevan | manager |   2985 |
+| bina      | manager |   2850 |
+| shivash   | manager |   2450 |
++-----------+---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select ename,job,salary from empl where job=not 'manager';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not 'manager'' at line 1
+mysql> select ename,job,salary from empl where job!='manager';
++---------+-----------+--------+
+| ename   | job       | salary |
++---------+-----------+--------+
+| smith   | clerk     |    800 |
+| anya    | salesman  |   1600 |
+| seth    | salesman  |   1250 |
+| momin   | salesman  |   1250 |
+| scott   | analyst   |   3000 |
+| amir    | president |   5000 |
+| kuldeep | salesman  |   1500 |
++---------+-----------+--------+
+7 rows in set (0.00 sec)
+
+mysql> select*from empl where ename like '__a_%'
+    -> ^C
+mysql> select*from empl where ename like '__a_%';
+Empty set (0.00 sec)
+
+mysql> select*from empl where ename like '__a_';
+Empty set (0.00 sec)
+
+mysql> select*from empl where ename like '_%a';
++-------+-------+----------+------+------------+--------+------+--------+
+| empno | ename | job      | mgr  | hireddate  | salary | comm | deptno |
++-------+-------+----------+------+------------+--------+------+--------+
+|  8499 | anya  | salesman | 8696 | 1991-02-20 |   1600 |  300 |     30 |
+|  8698 | bina  | manager  | 8839 | 1991-05-01 |   2850 | NULL |     30 |
++-------+-------+----------+------+------------+--------+------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select*from empl where ename like '_%t';
++-------+-------+---------+------+------------+--------+------+--------+
+| empno | ename | job     | mgr  | hireddate  | salary | comm | deptno |
++-------+-------+---------+------+------------+--------+------+--------+
+|  8888 | scott | analyst | 8566 | 1992-12-09 |   3000 | NULL |     20 |
++-------+-------+---------+------+------------+--------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> select*from empl where ename like 'm_l%';
+Empty set (0.00 sec)
+
+mysql> select*from empl;
++-------+-----------+-----------+------+------------+--------+------+--------+
+| empno | ename     | job       | mgr  | hireddate  | salary | comm | deptno |
++-------+-----------+-----------+------+------------+--------+------+--------+
+|  8369 | smith     | clerk     | 8902 | 1990-12-18 |    800 | NULL |     20 |
+|  8499 | anya      | salesman  | 8696 | 1991-02-20 |   1600 |  300 |     30 |
+|  8521 | seth      | salesman  | 8698 | 1991-02-22 |   1250 |  500 |     30 |
+|  8566 | mahadevan | manager   | 8839 | 1991-04-02 |   2985 | NULL |     20 |
+|  8654 | momin     | salesman  | 8698 | 1991-09-28 |   1250 | 1400 |     30 |
+|  8698 | bina      | manager   | 8839 | 1991-05-01 |   2850 | NULL |     30 |
+|  8882 | shivash   | manager   | 8839 | 1991-06-09 |   2450 | NULL |     10 |
+|  8888 | scott     | analyst   | 8566 | 1992-12-09 |   3000 | NULL |     20 |
+|  8839 | amir      | president | NULL | 1991-11-18 |   5000 | NULL |     10 |
+|  8844 | kuldeep   | salesman  | 8698 | 1991-09-08 |   1500 |    0 |     30 |
++-------+-----------+-----------+------+------------+--------+------+--------+
+10 rows in set (0.00 sec)
