@@ -1,0 +1,1849 @@
+
+
+DBMS  Database mgmt Systems
+
+1)Data:Data is a collection of facts such as numbers,words,names, images etc.
+
+
+2)Information:Processed form of data.
+
+
+
+2)Database: A database is a collection of organized data,information and record stored electronically in a computer system.A database is controlled by DBMS.The data can be easily accessed ,managed,modified ,updated,controlled and organized.
+
+
+
+4)DBMS:A DBMS serves as an interface between the database and its end users or programs, allowing users to retrieve ,update and manage how information is organized and optimized.
+
+
+
+5)RDBMS:Is a type of dbms,A relational database is a type of database that stores and provides access to data points that are related to one another.
+
+Relational Database mgmt sys-->
+
+
+
+                                                        
+
+                   
+ RDBMS stands for Relational Database Management System.mysql,              mongoDB(NOT RDBMS)
+
+
+The data in RDBMS is stored in database objects called tables. 
+
+A table is a collection of related data entries, and it consists of columns and rows.
+
+      
+
+
+
+
+
+Tables
+
+
+A column holds specific information about every record in the table.
+
+A record (or row) is each individual entry that exists in a table.
+
+ roll name phone
+ 111  alex  12344
+ 222 john   44354
+
+************************************************
+mysql (Database)
+
+c/C++/java/JS/  --->syntax (Grammer)
+
+
+
+Introduction to sql
+Structured query language:is a programming language that enables the function of retrieving, managing,storing the data in the relational database management system.
+
+
+SQL is a standard language for accessing and manipulating databases.
+
+Characteristics of SQL
+
+SQL is easy to learn.
+SQL is used to access data from relational database management systems.
+
+SQL can execute queries against the database.
+
+SQL is used to describe the data. 
+
+  rollno    name         marks                  rank                    city
+  int       alphabets    int/numbers           numbers/int             alphabets/varchar
+                                                  12                    
+
+SQL is used to define the data in the database and manipulate it when needed.
+
+SQL is used to create and drop the database and table.
+
+Database-->Tables
+
+StudentIII
+StudentIV-->CSE-->rollno   name
+          ECE-->rolno    name
+          EEE
+          MECH
+          CIV
+
+
+STAFF -->teaching -->empid  empname
+         non-teaching-->empid empname
+
+PO--->staff--empid empname
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  database-->tables
+  student4 -->cse
+            rollno  name  city
+           
+         ---ece
+            rollno  name  city
+         ---eee
+ 
+         ---mech
+
+
+SQL is used to create a views, stored procedure, function/methods in a database.
+
+SQL allows users to set permissions on tables, procedures, and views.
+Banking
+*******************************************
+
+
+SQL Commands
+
+SQL commands are instructions. It is used to communicate with the database. It is also used to perform specific tasks, functions, and queries of data.
+
+
+SQL can perform various tasks like create a table, add data to tables, drop the table, modify the table, set permission for users.
+
+Types of SQL Commands
+Types of SQL commands: DDL, DML, TCL, DCL and DQL.
+
+
+Data Definition Language, Data Manipulation Language, Transaction Control Language, and Data Control Language, Data Query language
+
+*set of statements used for storage structure and access methods by the database system is  called a data storage and definition language
+
+*Data Definition Language is used to define the database structure or schema.
+
+*DDL is also used to specify additional properties of the data.  
+
+*The data values stored in the database must satisfy certain consistency constraints.
+
+*All the command of DDL are auto-committed that means it permanently save all the changes in the database
+
+*DDL (Data Definition Language) :
+CREATE : to create objects in database,table
+ALTER : alters the structure of database tables
+DROP : delete objects from database,table
+RENAME : rename an objects
+
+
+
+
+*DML (Data Manipulation Language) :
+DML statements are used for managing data with in schema objects.
+
+INSERT: insert data into a table
+UPDATE: update existing data within a table
+DELETE: deletes all records from a table 
+
+
+
+TCL (Transaction Control Language) :
+Transaction Control Language commands are used to manage transactions in the database. These are used to manage the changes made by DML-statements.
+
+COMMIT: Commit command is used to permanently save any transaction into the database.
+  
+   
+SAVEPOINT: Savepoint command is used to temporarily save a transaction so that you can rollback to that point whenever necessary.
+
+ 
+
+ROLLBACK: This command restores the database to last committed state.It is also used with savepoint command to jump to a savepoint in a transaction.
+
+
+DCL 
+A Data Control Language is a syntax similar to a computer programming language used to control access to data stored in a database (Authorization). 
+
+GRANT: allow specified users to perform specified tasks.
+
+REVOKE: cancel previously granted or denied permissions.
+
+
+Data Query Language
+SELECT: retrieve data from the database
+
+
+Data types 
+
+Sql data types
+
+StudentAcad
+
+The data type of a column defines what value the column can hold: integer, character, date and time.
+
+BIT:A bit value type.0 or 1   Ex:RESULT(0,1), FEES,ATTENDANCE,LOAN,patient,Male,Female                                                     
+TINYINT:A very samll integer.-128 to 127   MaxMarks/age/mobile charge/days in a month(30,31)
+                                           class strength,hours/day,passenger /bus,
+ 
+//BOOLEAN:Zero is considered as false, nonzero values are considered as true.
+
+SMALL INT:A small integer.-32768 to 32767  empid/otp /atm pin/bike no plate/
+                                           course fee/ticket/bank balance/fresher                                                               salary/electricity bill/house emi/house rent
+                                           third hand iphone(koti)/
+                                    
+INT:A medium integer. Signed range is from -2147483648 to 214,7483647. 
+                                           phone/Bank balance/sal p.a /Eamcet hall 
+                                           Employee count/TS population/voters/movie                                            budget/house loan/business revenues
+
+BIGINT(size):A large integer.Range is from -9223372036854775808 to
+9223372036854775808 (922 quintilion 337 quidriantrillions 720 trillion 368 billions 5724 million 75 thousand...) Storage is 8 bytes,display width
+                                       ->light speed/swiss bank balance/Aadhar/world                                              population/Acc number/ space distance
+
+
+FLOAT :A floating point number. Ex:percentage/cgpa/height,weight/sight/temp/gst/
+ 
+
+DOUBLE(size, d)	A normal-size floating point number.size is number of digits,d is number of digits after decimal. 
+                             -->temp/pressure/NSE/
+    
+
+
+DATE	A date. Format: YYYY-MM-DD. EX:DOB/DOJ/DOD/building establish/manf date,expiry/
+                                       DOA/DOG
+
+DATETIME(fsp):A date and time combination. Format: YYYY-MM-DD hh:mm:ss. Horoscope match
+                                                                        Eclipse
+                                                                        DOB
+
+TIME(fsp):A time.Format: hh:mm:ss. EX:Swipe time/swipe out/Mobile recharge/online Exams/
+                                      Zoom meeting
+
+YEAR :A year in four-digit format. Ex:pass out year, joining year,2023-2024/leap years/
+
+
+
+String Data types:
+
+CHAR:A FIXED length string (can contain letters, numbers, and special characters). (0-255) password--> PASS/FAIL/NA/password/
+
+VARCHAR :A VARIABLE length string (can contain letters, numbers, and special characters). names/city/college name/email id
+
+TEXT(size):Holds a string with a maximum length of 65,535 bytes
+           feedback/review/comments
+
+TINYTEXT :Holds a string with a maximum length of 255 characters
+         :yes/no/Remarks/good/
+
+SET:A string object that can have 0 or more values, chosen from a list of possible values. You can list up to 64 values in a SET list
+                          (hyd,blore,mumbai)
+
+
+
+
+
+Operators:
+
+The SQL reserved words and characters are called operators.An operator can either be a unary or binary operator. The unary operator uses only one operand for performing the unary operation, whereas the binary operator uses two operands for performing the binary operation.
+
+Arithmetic operator: + ,-, *,/ , %
+
+Relational operator:
+
+Equal Operator (=)               
+Not Equal Operator (!=)
+Greater Than Operator (>)
+Greater Than Equals to Operator (>=)
+Less Than Operator (<)
+Less Than Equals to Operator (<=)
+
+
+MySql Installation
+
+First create a Database
+
+
+
+CREATE DATABASE databasename;  
+create database inspanner;
+
+use databasename;
+
+DROP DATABASE databasename;
+drop database inspanner;
+
+Create a Table
+
+
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+
+create table studentacad(Rollno int,name varchar(255),m1 int,m2 int);
+
+
+CREATE TABLE Students(
+    StudentID int,
+    FirstName varchar(255),
+    LastName varchar(255));
+
+desc tablename;   desc studentacad;
+
+RENAME TABLE old_table_name TO new_table_name;
+
+rename table studentAcad to studentA;
+
+ALTER TABLE table_name ADD column_name datatype;
+
+alter table studentA add city varchar(255);
+
+
+alter table studentA add m3 int;
+
+alter table students add city varchar(255));
+
+
+Drop Table
+DROP TABLE table_name;             
+
+
+create table studentA(rollno int, name varchar(255),phone int, city varchar(255));
+
+DML 
+INSERT
+   
+insert into studenta values(111,'alex', 1234,'hyd');
+
+    
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+
+insert into studentAcad values(111, 'Anil', 11);
+
+insert into studentpersonal values(111, 'anil',1234,'hyd');
+
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+SELECT * FROM TABLENAME;
+
+select * from studentacad;
+
+SELECT * FROM studentpersonal;
+
+select roll,name from studentpersonal;
+
+select rollno,name from studentacad;
+
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+UPDATE studentD set marks=77 where sid=111;
+
+update studenta set city='mumbai' where rollno=111;
+
+
+----------------------------------------------------------------------------
+DELETE 
+DELETE FROM table_name WHERE condition;
+
+delete from studenta where rollno=111;
+
+select * from studentacad;
+*****************************************************
+
+Constraints  /condition
+
+SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table. 
+
+Constraints at column level.
+
+NOT NULL - Ensures that a column cannot have a NULL value
+The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+
+
+CREATE TABLE Studenta(
+    ID int NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    Age int
+);
+
+
+insert into studenta values(null,'anil','sharma',21);
+
+insert into studenta values(22,'ajay','verma',null);
+
+
+
+
+
+
+
+
+To create a NOT NULL constraint on the "Age" column when the "StudentP" table is already created
+
+
+CREATE TABLE Studentb (
+    ID int NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    Age int
+);
+
+
+
+
+ALTER TABLE Studentb
+MODIFY COLUMN Age int NOT NULL;
+
+
+
+****************************************************************************************************************************
+
+primary key rollno
+rollno  name  CNO  cname
+111     anil  1     C
+222     ajay  2     java
+111     anil  2     java
+222     ajay  3     python
+
+{rollno,CNO} --> primary key
+
+ 111     1
+ 111     2
+ 222     2
+ 222     3
+
+
+
+PRIMARY KEY - SQL PRIMARY KEY Constraint
+The PRIMARY KEY constraint uniquely identifies each record in a table.
+                           uniquely identifies a record/row.
+
+
+Primary keys must contain UNIQUE values, and cannot contain NULL values,no duplicate values.
+
+A table can have only ONE primary key.Primary key can consist of multiple attributes(columns).
+
+CREATE TABLE Studentk (
+    ID int NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255),
+    Age int,
+    PRIMARY KEY (ID));
+
+insert into studentk values(111,'john','mike',21);
+insert into studentk values(111,'kate',john',22);
+******************************************************
+
+ FOREIGN KEY - Prevents actions that would destroy links between tables
+
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+The foreign key constraint is used to link two table together.
+
+The table which contains the foreign key is often called the child table, and the table whose primary key is being referred by the foreign key is called the Parent Table.
+
+StudentA      (Parent table)
+(primary key)
+
+Id    Firstname      Rank  
+111      Alex       67     
+222      Alice      98    
+333      Bob        6      
+
+Studentl  (child table)
+Aadhar  FirstName   Id (Foriegn key)
+1234    Alex       111
+5678    Alice      222
+9876    BOB        333 
+
+
+
+
+
+
+
+CREATE TABLE Studentl (
+    Aadhar int NOT NULL,
+    Firstname varchar(255) NOT NULL,
+    Id int,
+    PRIMARY KEY (Aadhar),
+    FOREIGN KEY (Id) REFERENCES StudentA(Id));
+
+
+The FOREIGN KEY constraint prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the parent table.
+
+************************************************
+
+Check Constraint
+
+The CHECK constraint is used to limit the value range that can be placed in a column.
+
+CREATE TABLE Studentc (
+    Aadhar int NOT NULL,
+    Firstname varchar(255) NOT NULL,
+    Age int,
+    marks int,
+    CHECK (Age>=18)
+);
+insert into studentc values(7234,'alex',14,89);
+
+
+
+
+
+
+
+
+
+For multiple columns
+
+CREATE TABLE studentd(
+    Aadhar int NOT NULL,
+    firstname varchar(255) NOT NULL,
+    Age int,
+    marks int,      
+    CONSTRAINT c CHECK (Age>=18 AND marks<=75));
+
+
+
+insert into studentd values(1233,'alex',15,90);
+
+
+
+
+
+
+
+
+
+
+
+create table studente(name varchar(255), age int);
+
+
+Add constraints
+ALTER TABLE studente ADD CHECK (Age>=18);
+
+
+
+create table studentf(age int, name varchar(255),mark int);
+
+ALTER TABLE studentf
+ADD CONSTRAINT CHK_studp CHECK (Age>=18 AND mark<=75);
+
+
+To DROP a CHECK Constraint
+
+ALTER TABLE studentf DROP CHECK CHK_studp;
+
+show create table tablename;                                             // (single column)
+
+show create table studente;
+
+
+************************************************
+
+DEFAULT - Sets a default value for a column if no value is specified
+
+
+CREATE TABLE studenti (
+    Aadhar int NOT NULL,
+    firstname varchar(255) NOT NULL,
+    Age int,
+    City varchar(255) DEFAULT 'hyderabad');
+
+insert into studenti values(1234,'abc',23,'pune');
+
+select * from studenti;
+
+insert into studenti values(6789,'xyz',21,default);
+
+select * from studenti;
+
+
+---------------------------------------------------------------------------------------
+
+
+create table studentj(id int, name varchar(255),city varchar(255));
+
+
+
+
+
+ALTER TABLE studentj ALTER City SET DEFAULT 'hyderabad';
+
+
+insert into studentj values(234,'abc',default);
+select * from studentj;
+-------------------------------------------------------------------------------------------
+
+DROP a DEFAULT Constraint
+ALTER TABLE studentj ALTER City DROP DEFAULT;
+
+insert into studentj values(234,'abc',default);
+
+*************************************************************************
+
+CREATE INDEX - Used to create and retrieve data from the database very quickly.
+
+CREATE INDEX idx_lastname ON StudentP(LastName);
+
+CREATE INDEX idx_pname ON StudentP (LastName, FirstName);
+
+create index sname on studentpersonal(name);
+
+select name from studentacad where score=1;
+
+create index mark on studentacad(score);
+
+
+------------------------------------------------------------------------------------------------
+where clause
+is used to extract the exact required information.
+----------------------------------------------------------------------------------------------
+                                                      /160
+SQl Functions                             
+
+The MIN() function returns the smallest value of the selected column.
+
+The MAX() function returns the largest value of the selected column.
+
+
+
+select min(score) from studentAcad; 1
+
+select max(score) from studentAcad; 223
+
+
+
+SELECT MIN(score) AS MinMarks FROM StudentAcad;
+
+SELECT MAX(score) AS Maxmarks FROM StudentAcad;
+
+
+The COUNT() function returns the number of rows that matches a specified criterion.
+
+SELECT COUNT(column_name) FROM table_name WHERE condition;
+
+select count(score) from studentAcad where score=1;
+
+select count(city) from studentacad where city='hyderabad';
+
+
+The AVG() function returns the average value of a numeric column. 
+
+SELECT AVG(column_name) FROM table_name WHERE condition;
+
+select avg(score )from studentacad ;
+
+                                          
+                                          The SUM() function returns the total sum of a numeric column. 
+
+SELECT SUM(column_name) FROM table_name WHERE condition;
+
+select sum(score) from studentacad;
+***********************************************************************************************************************
+mysql> select avg(score) from studenta;
++------------+
+| avg(score) |
++------------+
+|    73.3333 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(score) from studenta;
++------------+
+| sum(score) |
++------------+
+|        440 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select total(score) from studenta;
+ERROR 1305 (42000): FUNCTION academy.total does not exist
+mysql> select count(score) from studenta;
++--------------+
+| count(score) |
++--------------+
+|            6 |
++--------------+
+1 row in set (0.01 sec)
+
+mysql> select count(score) from studenta where score=100;
++--------------+
+| count(score) |
++--------------+
+|            3 |
++--------------+
+1 row in set (0.01 sec)
+
+
+----------------------------------------------------------------------------------------------
+SQL OPERATORS
+
+Between
+In  , not in
+Like , not like
+Intersect  , Union
+Some ,all ,any 
+Distinct  
+
+
+The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+
+The BETWEEN operator is inclusive: begin and end values are included. 
+
+SELECT roll,name FROM studentacad
+WHERE score BETWEEN 1 AND 5;
+
+SELECT roll,name FROM studentacad
+WHERE score NOT BETWEEN 1 AND 5;
+--------------------------------------------------------------------------------------------------------------------------------
+mysql> select id,firstname from studenta where score between 1 and 20;
++----+-----------+
+| id | firstname |
++----+-----------+
+|  6 | pikks     |
++----+-----------+
+1 row in set (0.01 sec)
+
+mysql> select firstname from studenta where score between 1 and 100;
++-----------+
+| firstname |
++-----------+
+| nikks     |
+| likks     |
+| vikks     |
+| sikks     |
+| bikks     |
+| pikks     |
++-----------+
+6 rows in set (0.00 sec)
+
+mysql> select firstname from studenta where score between 1 and 5;
+Empty set (0.00 sec)
+
+mysql> select firstname from studenta where score between 1 and 30;
++-----------+
+| firstname |
++-----------+
+| pikks     |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select firstname from studenta where score between 1 and 50;
++-----------+
+| firstname |
++-----------+
+| bikks     |
+| pikks     |
++-----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+IN operator
+The IN operator allows you to specify multiple values in a WHERE clause.
+
+SELECT roll,name FROM studentpersonal
+WHERE City IN ('Hyderabad', 'Mumbai');
+mysql> select id from student1 where city in 'hyd';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''hyd'' at line 1
+mysql> select id from student1 where city in "hyd";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"hyd"' at line 1
+mysql> select id from student1 where city in ("hyd");
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
++------+
+4 rows in set (0.00 sec)
+mysql> select * from student1;
++--------+-----------+------+------+
+| aadhar | firstname | id   | city |
++--------+-----------+------+------+
+|   1234 | nikks     |    1 | hyd  |
+|   5678 | likks     |    2 | hyd  |
+|  91011 | vikks     |    3 | hyd  |
+| 121314 | sikks     |    4 | hyd  |
++--------+-----------+------+------+
+mysql> select firstname from student1 where id in (1);
++-----------+
+| firstname |
++-----------+
+| nikks     |
++-----------+
+1 row in set (0.00 sec)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+NOT IN operator
+
+SELECT roll,name FROM StudentPersonal
+WHERE City 
+NOT IN ('Hyderabad','Mumbai');
+mysql> select id from student1 where id not in (1);
++------+
+| id   |
++------+
+|    2 |
+|    3 |
+|    4 |
++------+
+3 rows in set (0.01 sec)
+----------------------------------------------------------------------------------------------------------------------------
+
+
+LIKE operator
+The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+LIKE operator			Description
+
+WHERE StudentName LIKE 'a%'	Finds any values that start with "a"
+WHERE StudentName LIKE '%a'	Finds any values that end with "a"
+WHERE StudentName LIKE '%or%'	Finds any values that have "or" in any position
+WHERE StudentName LIKE '_r%'	Finds any values that have "r" in the second position
+WHERE StudentName LIKE 'a_%'	Finds any values that start with "a" and                                                               are at least 2 characters in length
+
+WHERE StudentName LIKE 'a__%'	Finds any values that start with "a" and 				                                are at least 3 characters in length
+WHERE StudentName LIKE 'a%o'	Finds any values that start with "a" and 					                        ends with "o"
+
+SELECT * FROM Studentacad WHERE name LIKE 'm%e';
+mysql> select * from student1;
++--------+-----------+------+------+
+| aadhar | firstname | id   | city |
++--------+-----------+------+------+
+|   1234 | nikks     |    1 | hyd  |
+|   5678 | likks     |    2 | hyd  |
+|  91011 | vikks     |    3 | hyd  |
+| 121314 | sikks     |    4 | hyd  |
++--------+-----------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studenta where firstname like 'n%';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
++----+-----------+-------+
+1 row in set (0.01 sec)
+
+mysql> select * from studenta where firstname like '%s';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studenta where firstname like '%ni%';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
++----+-----------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from studenta where firstname like '%kk%';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studenta where firstname like '%ks%';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studenta where firstname like 'p%s';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  6 | pikks     |    10 |
++----+-----------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from studenta where firstname like '%v_';
+Empty set (0.00 sec)
+
+mysql> select * from studenta where firstname like 'v%_';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  3 | vikks     |   100 |
++----+-----------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from studenta where firstname like '_%s';
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql>
+
+*****************************************************************************************************************************
+
+UNION
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Every SELECT statement within UNION must have the same number of columns
+
+
+The columns must also have similar data types
+The columns in every SELECT statement must also be in the same order.
+
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+Select Marks from student_pass where marks>90
+UNION
+Select Marks from student_fail where Marks <35;
+ 
+
+
+Select roll, Marks from student_pass where marks>90
+UNION
+Select roll, Marks from student_fail where Marks <35
+order by RollNo;
+mysql> select * from student1;
++--------+-----------+------+------+
+| aadhar | firstname | id   | city |
++--------+-----------+------+------+
+|   1234 | nikks     |    1 | hyd  |
+|   5678 | likks     |    2 | hyd  |
+|  91011 | vikks     |    3 | hyd  |
+| 121314 | sikks     |    4 | hyd  |
++--------+-----------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from student1 union select * from studenta;
+ERROR 1222 (21000): The used SELECT statements have a different number of columns
+mysql> alter table student1 drop column city;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student1;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from student1 union select * from studenta;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
+|      1 | nikks     |  100 |
+|      2 | likks     |  100 |
+|      3 | vikks     |  100 |
+|      4 | sikks     |   90 |
+|      5 | bikks     |   40 |
+|      6 | pikks     |   10 |
++--------+-----------+------+
+10 rows in set (0.01 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+ 
+Subquery
+A Subquery is a query within another query.
+Subqueries can be used with SELECT, UPDATE, INSERT, DELETE(dml)
+                                            
+The ANY operator:The condition is satisfied if the operation is true for any of the values in the range.         
+                   
+ALL operator:The condition is true for all the values in the range. LHS=ALL(RHS)
+                           
+
+The ANY and ALL operators allow you to perform a comparison between a single column value and a range of other values.
+                                                              
+
+SELECT StudentName
+FROM StudentsP
+WHERE StudentRoll = ANY
+  (SELECT StudentRoll
+  FROM StudentA
+  WHERE Marks >90);
+mysql> select * from student1;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from from student1 where id=any(select id from studenta where score=100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from student1 where id=any(select id from studenta where score=100)' at line 1
+mysql> select * from student1 where id=any(select id from studenta where score=100);
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
++--------+-----------+------+
+3 rows in set (0.01 sec)
+
+mysql> select * from student1;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from student1 where id=any(select id from studenta);
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+4 rows in set (0.00 sec)
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+				ALL OPERATOR
+
+SELECT StudentName
+FROM StudentsP
+WHERE StudentRoll = ALL
+  (SELECT StudentRoll
+  FROM StudentA
+  WHERE Marks >90);
+mysql> select * from student1;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+-----------+-------+
+| id | firstname | score |
++----+-----------+-------+
+|  1 | nikks     |   100 |
+|  2 | likks     |   100 |
+|  3 | vikks     |   100 |
+|  4 | sikks     |    90 |
+|  5 | bikks     |    40 |
+|  6 | pikks     |    10 |
++----+-----------+-------+
+6 rows in set (0.00 sec)
+
+				1 2 3 4(lhs=!rhs) 1,2,3,4,5
+
+mysql> select * from student1 where id=all(select id from studenta where score>10);
+Empty set (0.01 sec)
+-------------------------------------------------------------------------------------------------------------------------
+
+
+DISTINCT
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+SELECT DISTINCT City StudentP;
+mysql> select * from student1;
++--------+-----------+------+
+| aadhar | firstname | id   |
++--------+-----------+------+
+|   1234 | nikks     |    1 |
+|   5678 | likks     |    2 |
+|  12344 | nikks     |    4 |
+|  91011 | vikks     |    3 |
+| 121314 | sikks     |    4 |
++--------+-----------+------+
+5 rows in set (0.00 sec)
+
+mysql> select distinct firstname from student1;
++-----------+
+| firstname |
++-----------+
+| nikks     |
+| likks     |
+| vikks     |
+| sikks     |
++-----------+
+4 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+SQL JOINS  
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+
+(INNER) JOIN: Returns records that have matching values in both tables
+
+select studentpersonal.city,studentAcad.score from studentpersonal inner join studentAcad on studentpersonal.roll=studentAcad.roll;
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
++----+---------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+---------+-------+
+| id | name    | score |
++----+---------+-------+
+|  1 | nikitha |   100 |
+|  2 | likitha |   100 |
+|  3 | vikitha |    90 |
+|  4 | tikitha |    10 |
++----+---------+-------+
+4 rows in set (0.00 sec)
+
+mys
+mysql> select * from studenta;
++----+----------+-------+
+| id | name     | score |
++----+----------+-------+
+|  1 | nikitha  |   100 |
+|  2 | likitha  |   100 |
+|  3 | vikitha  |    90 |
+|  4 | tikitha  |    10 |
+|  5 | trik     |    12 |
+|  6 | tikithan |    11 |
++----+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select studentp.city,studenta.score from studentp inner join studenta on studentp.id=studenta.id;
++----------+-------+
+| city     | score |
++----------+-------+
+| hyd      |   100 |
+| banglore |   100 |
+| vizag    |    90 |
+| vizag    |    10 |
+| wb       |    12 |
++----------+-------+(displays only the common/intersection recordsi.e which are same in both the tables
+)
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+
+select studentpersonal.phone,studentacad.score from studentpersonal left
+join studentacad on( studentpersonal.roll=studentacad.roll);
+
+mysql> select * from studenta;
++----+----------+-------+
+| id | name     | score |
++----+----------+-------+
+|  1 | nikitha  |   100 |
+|  2 | likitha  |   100 |
+|  3 | vikitha  |    90 |
+|  4 | tikitha  |    10 |
+|  5 | trik     |    12 |
+|  6 | tikithan |    11 |
++----+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select studentp.city,studenta.score from studentp left outer join studenta on studentp.id=studenta.id;
++----------+-------+
+| city     | score |
++----------+-------+
+| hyd      |   100 |
+| banglore |   100 |
+| vizag    |    90 |
+| vizag    |    10 |
+| wb       |    12 |
++----------+-------+
+5 rows in set (0.01 sec)
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+
+select studentacad.score,studentpersonal.city from studentpersonal right
+join studentacad on(studentpersonal.roll=studentacad.roll);
+mysql> select * from studenta;
++----+----------+-------+
+| id | name     | score |
++----+----------+-------+
+|  1 | nikitha  |   100 |
+|  2 | likitha  |   100 |
+|  3 | vikitha  |    90 |
+|  4 | tikitha  |    10 |
+|  5 | trik     |    12 |
+|  6 | tikithan |    11 |
++----+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select studentp.city,studenta.score from studentp right join studenta on studentp.id=studenta.id;
++----------+-------+
+| city     | score |
++----------+-------+
+| hyd      |   100 |
+| banglore |   100 |
+| vizag    |    90 |
+| vizag    |    10 |
+| wb       |    12 |
+| NULL     |    11 |
++----------+-------+
+6 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+select studentacad.score,studentpersonal.city from studentpersonal outer
+join studentacad on(studentpersonal.roll=studentacad.roll);
+
+
+
+mysql> select studentacad.score,studentpersonal.city from studentpersonal full outer join studentacad on studentpersonal.roll=studentacad.roll order by studentacad.score;
+mysql> select studentp.city,studenta.score from studentp outer join studenta on studentp.id=studenta.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'outer join studenta on studentp.id=studenta.id' at line 1
+mysql> select studentp.city,studenta.score from studentp full outer join studenta on studentp.id=studenta.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'outer join studenta on studentp.id=studenta.id' at line 1
+mysql> select studentp.city,studenta.score from studentp full outer join studenta on studentp.id=studenta.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'outer join studenta on studentp.id=studenta.id' at line 1
+mysql> SELECT studentp.city, studenta.score
+    -> FROM studentp
+    -> LEFT JOIN studenta ON studentp.id = studenta.id
+    -> UNION
+    -> SELECT studentp.city, studenta.score
+    -> FROM studentp
+    -> RIGHT JOIN studenta ON studentp.id = studenta.id;
++----------+-------+
+| city     | score |
++----------+-------+
+| hyd      |   100 |
+| banglore |   100 |
+| vizag    |    90 |
+| vizag    |    10 |
+| wb       |    12 |
+| NULL     |    11 |
++----------+-------+
+6 rows in set (0.01 sec)
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+LEFT JOIN
+
+The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2).
+
+select ProductTable.prodName,orders.custName 
+from productTable LEFT JOIN Orders ON(ProductTable.ProdID=Orders.ProdID);
+
+RIGHT JOIN
+The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1).
+
+select ProductTable.prodName,orders.custName from productTable RIGHT JOIN Orders ON (ProductTable.ProdID=Orders.ProdID);
+
+
+FULL JOIN
+The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+
+
+VIEWS
+
+In SQL, a view is a virtual table based on the result-set of an SQL statement.
+A view contains rows and columns, just like a real table.
+
+CREATE VIEW [StudentContact] AS
+SELECT StudentName, StudentContact
+FROM Studentpersonal
+WHERE City = 'Mumbai';
+
+create view studentcontact as select name,phone from studentpersonal where city='kolkata';
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+----------+-------+
+| id | name     | score |
++----+----------+-------+
+|  1 | nikitha  |   100 |
+|  2 | likitha  |   100 |
+|  3 | vikitha  |    90 |
+|  4 | tikitha  |    10 |
+|  5 | trik     |    12 |
+|  6 | tikithan |    11 |
++----+----------+-------+
+6 rows in set (0.00 sec)
+mysql> drop view studentcontact;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from studentcontact;
+ERROR 1146 (42S02): Table 'academy.studentcontact' doesn't exist
+mysql> create view top_student as select name,score from studenta;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from top_student;
++----------+-------+
+| name     | score |
++----------+-------+
+| nikitha  |   100 |
+| likitha  |   100 |
+| vikitha  |    90 |
+| tikitha  |    10 |
+| trik     |    12 |
+| tikithan |    11 |
++----------+-------+
+6 rows in set (0.00 sec)
+
+
+
+mysql> create view studentcontact as select name,phone from studentp where city='vizag';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from studentcontact;
++---------+------------+
+| name    | phone      |
++---------+------------+
+| vikitha | 9999999992 |
+| tikitha | 9999999993 |
++---------+------------+
+2 rows in set (0.01 sec)
+----------------------------------------------------------------------------------------------------------------------------
+
+
+select * from studentcontact;
+
+
+
+CREATE VIEW [Topstudents] AS
+SELECT RollNo, score
+FROM StudentsAcad
+WHERE score BETWEEN 1 AND 5;
+
+
+
+
+To Drop a view
+drop view studentcontact;
+
+select * from studentcontact;
+
+
+--------------------------------------------------------------------------------
+Ali
+ases 
+
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+Aliases are often used to make column names more readable.
+
+An alias only exists for the duration of that query.
+
+An alias is created with the AS keyword.
+
+
+Select   ROll as StudentID, Name as StudentName from 
+StudentAcad;
+
+
+
+**double quotation/single quote marks if the alias name contains spaces
+
+SELECT name AS "student Name", Phone AS "Contact Student"
+FROM Studentpersonal;
+
+select city as 'student city' from studentpersonal;
+
+mysql> select city as 'student city' from studentp;
++--------------+
+| student city |
++--------------+
+| hyd          |
+| banglore     |
+| vizag        |
+| vizag        |
+| wb           |
++--------------+
+5 rows in set (0.00 sec)
+
+mysql> select city as 'student city' from studentp;
++--------------+
+| student city |
++--------------+
+| hyd          |
+| banglore     |
+| vizag        |
+| vizag        |
+| wb           |
++--------------+
+5 rows in set (0.00 sec)
+
+mysql> select 'student city' from studentp;
++--------------+
+| student city |
++--------------+
+| student city |
+| student city |
+| student city |
+| student city |
+| student city |
++--------------+
+
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+
+--------------------------------------------------------------------------
+
+concat()
+The CONCAT() function adds two or more expressions together.
+
+select concat(roll,',',name)as studentid from studentpersonal;
+mysql> select concat(id,',',name)as studentid from studentp;
++-----------+
+| studentid |
++-----------+
+| 1,nikitha |
+| 2,likitha |
+| 3,vikitha |
+| 4,tikitha |
+| 5,trik    |
++-----------+
+5 rows in set (0.01 sec)
+
+mysql> select concat(id,'',city) as studentcity from studentp;
++-------------+
+| studentcity |
++-------------+
+| 1hyd        |
+| 2banglore   |
+| 3vizag      |
+| 4vizag      |
+| 5wb         |
++-------------+
+5 rows in set (0.00 sec)
+
+mysql> select concat(id,',',city) as studentcity from studentp;
++-------------+
+| studentcity |
++-------------+
+| 1,hyd       |
+| 2,banglore  |
+| 3,vizag     |
+| 4,vizag     |
+| 5,wb        |
++-------------+
+5 rows in set (0.00 sec)
+
+
+
+-----------------------------------------------------------------------------------
+Alias for Tables:-
+Aliases in MySQL is used to give a temporary name to a table or a column in a table for the purpose of a particular query.
+
+select a.roll,a.name from studentpersonal as a where a.city="hyderabad";
+mysql> select a.id,a.name from studentp as a where a.city="vizag";
++----+---------+
+| id | name    |
++----+---------+
+|  3 | vikitha |
+|  4 | tikitha |
++----+---------+
+2 rows in set (0.00 sec)
+
+
+
+SELECT p.roll, p.name, a.score
+FROM StudentPersonal AS p, StudentAcad AS a
+WHERE p.roll=a.roll;
+
+
+Truncate
+A truncate statement is used to remove all rows (complete data) from a table.
+
+Truncate table StudentP;
+select * from studentp;
+
+delete from tablename;             -->rows get deleted
+
+The rollback process is not possible after truncate table statement.
+
+
+
+Subquery
+A Subquery is a query within another query.
+Subqueries can be used with SELECT, UPDATE, INSERT, DELETE
+
+
+
+The INTERSECT clause in SQL is used to combine two SELECT statements but the dataset returned by the INTERSECT statement will be the intersection of the data-sets of the two SELECT statements.
+
+
+select roll from studentpersonal
+intersect
+select roll from studentacad;
+
+mysql> select * from studentp intersect select * from studenta;
+ERROR 1222 (21000): The used SELECT statements have a different number of columns
+mysql> select * from studentp;
++----+---------+----------+------------+
+| id | name    | city     | phone      |
++----+---------+----------+------------+
+|  1 | nikitha | hyd      | 9999999999 |
+|  2 | likitha | banglore | 9999999991 |
+|  3 | vikitha | vizag    | 9999999992 |
+|  4 | tikitha | vizag    | 9999999993 |
+|  5 | trik    | wb       | 909090     |
++----+---------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from studenta;
++----+----------+-------+
+| id | name     | score |
++----+----------+-------+
+|  1 | nikitha  |   100 |
+|  2 | likitha  |   100 |
+|  3 | vikitha  |    90 |
+|  4 | tikitha  |    10 |
+|  5 | trik     |    12 |
+|  6 | tikithan |    11 |
++----+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select id from studentp intersect select id from studenta;
++----+
+| id |
++----+
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
++----+
+5 rows in set (0.00 sec)
+
+
+****************************************************************************************************************************
+
+The GROUP BY statement groups rows that have the same values,organizing similar data into groups used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+
+select count(roll),city from studentpersonal group by city;
+mysql> select count(id),city from studentp group by city;
++-----------+----------+
+| count(id) | city     |
++-----------+----------+
+|         1 | hyd      |
+|         1 | banglore |
+|         2 | vizag    |
+|         1 | wb       |
++-----------+----------+
+4 rows in set (0.01 sec)
+
+
+select count(roll),score from studentacad group by score;
+
+mysql> select count(id),score from studenta groupby score;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'score' at line 1
+mysql> select count(id),score from studenta group by score;
++-----------+-------+
+| count(id) | score |
++-----------+-------+
+|         2 |   100 |
+|         1 |    90 |
+|         1 |    10 |
+|         1 |    12 |
+|         1 |    11 |
++-----------+-------+
+5 rows in set (0.00 sec)
+
+
+*************************************************************************************
+Exists
+The EXISTS operator is used to test for the existence of any record in a subquery.
+                                                 
+select name from studentacad where exists(select name from studentpersonal where studentpersonal.roll=studentacad.roll);
+
+
+**********************************************************************************
+
+Having
+The HAVING clause is used with aggregate functions.
+
+select count(score),score from studentacad group by score having score<5;
+
+*******************************************************************************
+Triggers, stored procedures(function)
+
+ACID:Atomicity,consistency, isolation,durability
+
+Normalization: , triggers, stored procedures
+Normalization is the process of organizing the data in the database,to minimize the redundancy and enhance data integrity in the table.
+Types of Normal Form
+
+1NF 2NF 3NF BCNF 4NF 5F
+, stored procedures, triggers.
+
+1NF:
+A table is referred to as being in its First Normal Form if atomicity of the table is 1.
+Atomicity states that a single cell cannot hold multiple values. It must hold only a single-valued attribute.
+
+2NF:
+Candidate Key:
+A candidate key is a set of one or more columns that can identify a record uniquely in a table,
+
+
+Super Key
+Operators
+
+***********************************************************************************
+group by
+select count(orderID),CustAdd from orders group By CustAdd having count(orderId)>5;
+
+select count(OrderId),CustAdd from Orders Group By CustAdd;
+
+GroupBy
+The GROUP BY statement groups rows that have the same values into summary rows.
+
+select count(OrderId),CustAdd
+from Orders Group By CustAdd;
+*********************************************************************************
+
+
+
+create table person(num int auto_increment ,name varchar(255),primary key
+(num));
+
+
+
+ insert into person(name) values('alex'); 
+ insert into person(name) values('felix');
+
+ select * from person;
+
+
+
+
+
+
+
+
+
